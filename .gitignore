@@ -1,0 +1,11 @@
+node_modules/
+dist/
+.next/
+.turbo/
+*.env
+!*.env.example
+apps/api/schema.gql
+packages/graphql-types/src/generated.ts
+pnpm-debug.log
+.DS_Store
+*.tsbuildinfo

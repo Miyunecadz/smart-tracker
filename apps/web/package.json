@@ -1,0 +1,31 @@
+{
+  "name": "@smart-tracker/web",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "dev": "next dev --turbopack",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@apollo/client": "^4.2.3",
+    "@apollo/client-integration-nextjs": "^0.14.5",
+    "@smart-tracker/graphql-types": "workspace:*",
+    "clsx": "^2.1.1",
+    "graphql": "^16.9.0",
+    "next": "^16.2.9",
+    "react": "^19.2.7",
+    "react-dom": "^19.2.7",
+    "rxjs": "^7.8.2",
+    "tailwind-merge": "^3.6.0"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4.3.1",
+    "@types/node": "^22.x",
+    "@types/react": "^19.2.17",
+    "@types/react-dom": "^19.x",
+    "tailwindcss": "^4.3.1",
+    "typescript": "^5.6.3"
+  }
+}

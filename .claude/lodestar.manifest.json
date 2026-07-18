@@ -1,0 +1,36 @@
+{
+  "version": "0.2.0",
+  "placement": "git-workspace",
+  "repos": [
+    {
+      "name": "smart-tracker",
+      "path": ".",
+      "stacks": ["graphql-apollo-server", "graphql-apollo-client", "has-eslint", "has-prettier", "has-frontend"],
+      "architecture": "graphify"
+    }
+  ],
+  "skills": ["planning-workflow", "architecture-overview", "graphql-contract", "backend-standards"],
+  "guardrails": [
+    "block-destructive-commands",
+    "protect-default-branch",
+    "no-hand-edit-lockfiles",
+    "protect-generated-files",
+    "block-env-files",
+    "block-secret-files",
+    "scan-secrets-before-commit",
+    "commit-message-style",
+    "verifier-before-commit",
+    "autolint-on-edit"
+  ],
+  "agents": [
+    "feature-planner",
+    "reviewer",
+    "security-auditor",
+    "implementer",
+    "docs-writer",
+    "feature-orchestrator",
+    "resolver-writer",
+    "ui-designer",
+    "accessibility-reviewer"
+  ]
+}

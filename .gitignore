@@ -9,3 +9,5 @@ packages/graphql-types/src/generated.ts
 pnpm-debug.log
 .DS_Store
 *.tsbuildinfo
+graphify-out/
+.lodestar

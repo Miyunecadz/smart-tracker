@@ -1,0 +1,27 @@
+#!/bin/sh
+# Enforce commit-message-style guardrail on ALL commit paths (-m, -F, editor).
+# Rules: single-line subject, no body, no trailers (Co-Authored-By / Signed-off-by).
+
+msg_file="$1"
+
+# Strip git comment lines (#...) and blank lines.
+content=$(grep -v '^#' "$msg_file" | sed '/^[[:space:]]*$/d')
+
+if [ -z "$content" ]; then
+  echo "commit-msg: empty commit message." >&2
+  exit 1
+fi
+
+lines=$(printf '%s\n' "$content" | wc -l | tr -d '[:space:]')
+if [ "$lines" -gt 1 ]; then
+  echo "commit-msg: message must be a single line (no body). Found $lines lines." >&2
+  echo "  Rewrite as one concise subject line." >&2
+  exit 1
+fi
+
+if printf '%s' "$content" | grep -qiE '(co-authored-by|signed-off-by):'; then
+  echo "commit-msg: trailers (Co-Authored-By / Signed-off-by) are not allowed." >&2
+  exit 1
+fi
+
+exit 0

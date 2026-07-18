@@ -8,14 +8,23 @@
     "start": "node dist/main",
     "lint": "eslint src --ext .ts",
     "migration:create": "mikro-orm migration:create",
-    "migration:up": "mikro-orm migration:up"
+    "migration:up": "mikro-orm migration:up",
+    "seed:roles": "ts-node --transpile-only ./src/seeders/seed-roles.ts"
+  },
+  "mikro-orm": {
+    "useTsNode": true,
+    "configPaths": [
+      "./mikro-orm.config.ts",
+      "./dist/mikro-orm.config.js"
+    ]
   },
   "dependencies": {
     "@apollo/server": "^5.5.1",
-    "@mikro-orm/core": "^7.1.5",
-    "@mikro-orm/migrations": "^7.1.5",
+    "@as-integrations/express5": "^1.1.2",
+    "@mikro-orm/core": "^7.1.7",
+    "@mikro-orm/migrations": "^7.1.7",
     "@mikro-orm/nestjs": "^7.0.2",
-    "@mikro-orm/postgresql": "^7.1.5",
+    "@mikro-orm/postgresql": "^7.1.7",
     "@nestjs/apollo": "^13.4.2",
     "@nestjs/common": "^11.1.27",
     "@nestjs/config": "^4.0.4",
@@ -31,6 +40,7 @@
     "ts-morph": "^28.0.0"
   },
   "devDependencies": {
+    "@mikro-orm/cli": "^7.1.7",
     "@nestjs/cli": "^11.0.23",
     "@nestjs/schematics": "^11.1.0",
     "@types/node": "^22.x",

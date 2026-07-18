@@ -7,6 +7,10 @@ import { MikroOrmModule } from '@mikro-orm/nestjs';
 import { MikroOrmMiddleware } from '@mikro-orm/nestjs';
 import { PostgreSqlDriver } from '@mikro-orm/postgresql';
 import { UsersModule } from './users/users.module';
+import { UserEntity } from './users/user.entity';
+import { RoleEntity } from './roles/role.entity';
+import { PermissionEntity } from './permissions/permission.entity';
+import { RolePermissionEntity } from './role-permissions/role-permission.entity';
 
 @Module({
   imports: [
@@ -17,7 +21,7 @@ import { UsersModule } from './users/users.module';
       useFactory: (config: ConfigService) => ({
         driver: PostgreSqlDriver,
         clientUrl: config.get('DATABASE_URL'),
-        autoLoadEntities: true,
+        entities: [UserEntity, RoleEntity, PermissionEntity, RolePermissionEntity],
         debug: config.get('NODE_ENV') !== 'production',
       }),
     }),

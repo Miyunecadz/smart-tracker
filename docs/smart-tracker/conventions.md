@@ -19,6 +19,7 @@ For the cross-repo picture see [`../_shared/`](../_shared/) and [`../repo-map.md
 | Codegen | `pnpm codegen` | `graphql-codegen --config codegen.ts` → `packages/graphql-types` |
 | DB migration (create) | `pnpm --filter @smart-tracker/api migration:create` | MikroORM; **new** migration only |
 | DB migration (apply) | `pnpm --filter @smart-tracker/api migration:up` | |
+| DB seed (roles) | `pnpm --filter @smart-tracker/api seed:roles` | Idempotent; inserts default `user` role |
 | Local infra | `docker-compose up` | Postgres (see `docker-compose.yml`) |
 
 ## Lint & format
